@@ -1,7 +1,17 @@
-function isPolindrom(word) {
-    let rWord = word.split('').reverse().join('');
+function isPalindrome(word) {
+    const letters = [];
+    let rWord = '';
+    for (let i = 0; i < word.length; i++) {
+        letters.push(word[i]);
+    }
+    for (let i = 0; i < word.length; i++) {
+        rWord += letters.pop();
+    }
+    // let rWord = word.split('').reverse().join('');
     return rWord === word;
 }
+
+// console.log(isPalindrome('qwqq'));
 
 function Stack() {
     this.count = 0;
