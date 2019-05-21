@@ -8,4 +8,4 @@ function quickSort(arr) {
     return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 }
 
-console.log(quickSort([1, 6, 9, 7, 3, 4]));
+// console.log(quickSort([1, 6, 9, 7, 3, 4]));
