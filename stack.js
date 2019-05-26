@@ -1,14 +1,14 @@
 function isPalindrome(word) {
-    const letters = [];
-    let rWord = '';
-    for (let i = 0; i < word.length; i++) {
-        letters.push(word[i]);
-    }
-    for (let i = 0; i < word.length; i++) {
-        rWord += letters.pop();
-    }
-    // let rWord = word.split('').reverse().join('');
-    return rWord === word;
+    let r = 0,
+        l = word.length - 1;
+        while(l < r) {
+            if (arr[l] !== arr[r]) {
+                return false;
+            }
+            l--;
+            r++;
+        }
+        return true;
 }
 
 // console.log(isPalindrome('qwqq'));

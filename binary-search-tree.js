@@ -10,28 +10,27 @@ function BST() {
         console.log(this.root);
     };
     this.add = function(value) {
-        const node = this.root;
-        if (node === null) {
+        if (this.root === null) {
             this.root = new Node(value);
         } else {
-            function searchTree (childNode) {
-                if (value < childNode.value) {
-                    if (childNode.left === null) {
-                        childNode.left = new Node(value);
-                    } else if (childNode.left !== null) {
-                        searchTree(value);
+            function searchTree (node) {
+                if (value < node.value) {
+                    if (node.left === null) {
+                        node.left = new Node(value);
+                    } else if (node.left !== null) {
+                        searchTree(node.left);
                     }
-                } else if (value > childNode.value) {
-                    if (childNode.right === null) {
-                        childNode.right = new Node(value);
-                    } else if (childNode.right !== null) {
-                        searchTree(value);
+                } else if (value > node.value) {
+                    if (node.right === null) {
+                        node.right = new Node(value);
+                    } else if (node.right !== null) {
+                        searchTree(node.right);
                     }
                 } else {
                     return false;
                 }
             }
-            searchTree(node);
+            searchTree(this.root);
         }
     };
     this.findMin = function () {
@@ -121,7 +120,7 @@ function BST() {
 // bst.print();
 // console.log(bst.findMax());
 // console.log(bst.findMin());
-// bst.remove(9);
 // // console.log(bst.findMax());
 // console.log(bst.isPresent(4));
 // console.log(bst.isPresent(11));
+// bst.print();
